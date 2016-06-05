@@ -36,9 +36,9 @@ void swap(int *a,int *b){
  * */
 
 int  **temp;
-    temp=&a;
+    temp=*a;
     *a=*b;
-    *b=**temp;
-    printf("\n___a=%d,%d,%d,%d,%d",*a,**temp,*temp,temp,&temp);
+    *b=temp;
+    //printf("\n___a=%d,%d,%d,%d,%d",*a,**temp,*temp,temp,&temp);
     return;
 }
