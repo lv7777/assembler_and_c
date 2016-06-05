@@ -1,3 +1,7 @@
+/*
+ *
+ * */
+
 #include<stdio.h>
 
 void swap(int *i,int *j);
@@ -15,9 +19,26 @@ int main(){
 }
 
 void swap(int *a,int *b){
-    int  **temp;
-    temp=*a;
+
+/*
+ *maybe also available 
+ * int * temp;
+ * temp=a;
+ * a=b;
+ *
+ * naturally, available on
+ *  int temp;
+ *  temp=*a;
+ *  *a=*b;
+ *  *b=temp;
+ *
+ *
+ * */
+
+int  **temp;
+    temp=&a;
     *a=*b;
-    *b=temp;
+    *b=**temp;
+    printf("\n___a=%d,%d,%d,%d,%d",*a,**temp,*temp,temp,&temp);
     return;
 }
